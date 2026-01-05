@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Yaser Web CV",
-  description: "D/ Yaser ashraf elnagar",
+  description: "Dr/ Yaser ashraf elnagar",
 };
 
 export default function RootLayout({
