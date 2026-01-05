@@ -53,7 +53,7 @@ export default function PricingPlans() {
           </div>
 
           <a
-            href="https://wa.me/201012345678?text=Simple portfolioكنت عايز أسال عن خطة ال"
+            href="https://wa.me/201096660304?text=Simple portfolioكنت عايز أسال عن خطة ال"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full cursor-pointer py-3 text-center rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 transition font-medium backdrop-blur-md"
@@ -126,7 +126,7 @@ export default function PricingPlans() {
           </div>
 
           <a
-            href="https://wa.me/201012345678?text=Advanced portfolioكنت عايز أسال عن خطة ال"
+            href="https://wa.me/201096660304?text=Advanced portfolioكنت عايز أسال عن خطة ال"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer py-3 text-center rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 transition font-medium backdrop-blur-md"
@@ -169,7 +169,7 @@ export default function PricingPlans() {
           </div>
 
           <a
-            href="https://wa.me/201012345678?text=Custome websiteكنت عايز أسال عن خطة ال"
+            href="https://wa.me/201096660304?text=Custome websiteكنت عايز أسال عن خطة ال"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer py-3 text-center rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 transition font-medium backdrop-blur-md"
