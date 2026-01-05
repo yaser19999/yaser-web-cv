@@ -14,7 +14,7 @@ export default async function Home() {
           <h1
             className={`${kufi.className}  text-3xl  pt-10 md:text-5xl xl:text-[70px]  text-[#537692] text-center `}
           >
-            ياسر أشرف النجار
+           test ياسر أشرف النجار
           </h1>
           <div className=" flex flex-col items-center justify-center md:flex-row-reverse gap-10 xl:gap-50 w-full ">
             <div className="flex  justify-center">
