@@ -88,7 +88,7 @@ const handleSubmit = async (data: FormData) => {
     const message = data.get('text') as string ?? ''
 
 
-    fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/email/sendcontact`, {
+    await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/email/sendcontact`, {
         method: 'POST',
         body: JSON.stringify({ name, email, message }),
         headers: {

@@ -20,7 +20,6 @@ export async function POST(req: NextRequest) {
     user.passwordResetToken = token;
     user.passwordResetTokenExpiry = Date.now() + 1000 * 60 * 10; // 10 mins
     await user.save();
-    console.log(await User.findOne({ email }));
 
     const resetLink = `<a href="${process.env.NEXT_PUBLIC_SITE_URL}/forgetPassword/reset?token=${token}">reset password</a>`;
 
@@ -34,10 +33,13 @@ export async function POST(req: NextRequest) {
             replyTo: email,
         });
 
-        console.log(data);
+        return Response.json({ message: "Reset email sent" });
+
     } catch (error) {
 
         console.log(error);
+        return Response.json({ message: "Reset email did not sent" });
+
     }
 
 
@@ -45,5 +47,4 @@ export async function POST(req: NextRequest) {
 
 
 
-    return Response.json({ message: "Reset email sent" });
 }

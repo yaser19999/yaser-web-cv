@@ -1,9 +1,9 @@
-// import { EmailTemplate } from '@/components/email-template';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
+
   try {
     const formData = await req.json();
     const { name, email, message } = formData;
@@ -15,10 +15,8 @@ export async function POST(req: Request) {
       html: message ?? '',
       replyTo: email,
     });
-
     console.log(data);
-    console.log(error);
-    return Response.json(data);
+    return Response.json({data});
   } catch (error) {
     return Response.json({ error });
   }
