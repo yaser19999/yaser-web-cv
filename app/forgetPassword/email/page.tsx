@@ -1,11 +1,13 @@
 import ForgetPasswordEmailPage from '@/components/ForgetPasswordEmailPage'
 import NavBar from '@/components/NavBar'
 
-export default function page() {
+export default async function page({searchParams}:{searchParams?:{message?:string , type?:"success" | "error"}}) {
+  const data = await searchParams;
+  
   return (
     <div>
       <NavBar />
-      <ForgetPasswordEmailPage />
+      <ForgetPasswordEmailPage searchParams={data} />
     </div>
   )
 }

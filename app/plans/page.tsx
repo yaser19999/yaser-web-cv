@@ -13,7 +13,7 @@ export default function PricingPlans() {
         <div className="absolute w-[500px] h-[500px] bg-[#0d3355]/30 blur-[200px] rounded-full bottom-10 right-1/4"></div>
       </div>
 
-      <h2 className="text-4xl font-semibold mb-2 z-10">
+      <h2 className="text-4xl text-center font-semibold mt-16 md:mt-1 mb-4 z-10">
         Choose a right plan for you
       </h2>
       <p className="text-gray-300 mb-12 z-10"></p>
@@ -30,7 +30,9 @@ export default function PricingPlans() {
             <div className="flex  items-center gap-3 mb-3 ">
               <h3 className="text-2xl font-semibold ">Simple portfolio</h3>
               <Tooltip>
-                <TooltipTrigger><CircleQuestionMark/></TooltipTrigger>
+                <TooltipTrigger>
+                  <CircleQuestionMark />
+                </TooltipTrigger>
                 <TooltipContent>
                   <p>a single landing page containing important informations</p>
                   <p>image , address , name , about yourself </p>
@@ -40,10 +42,36 @@ export default function PricingPlans() {
             <p className="text-gray-400 mb-4 text-sm">
               Single page containing important informations
             </p>
-            <p className="text-5xl font-bold mb-6 tracking-tight">
-              2499 EGP
-              <span className="text-lg text-gray-300"></span>
-            </p>
+            <div className="relative mb-7">
+              {/* Discount badge */}
+
+              {/* Old price */}
+              <div className="flex items-center justify-between flex-wrap gap-2 mb-1">
+                <div>
+                  <span className="text-xs uppercase tracking-widest font-medium text-red-400/80">
+                    Was
+                  </span>{" "}
+                  <span className="text-xl  text-white/60 line-through">
+                    3500 EGP
+                  </span>
+                </div>
+
+                <span className=" bg-linear-to-r from-[#6b4f1d]/40 via-[#f5d57a]/40 to-[#6b4f1d]/40 text-[#f8e7a1] text-xs px-4 py-1.5 rounded-full font-semibold tracking-widest uppercase border border-[#f5d57a]/40 shadow-[0_0_18px_rgba(255,215,120,0.6)] transition-all duration-500 cursor-pointer hover:shadow-none backdrop-blur-xl">
+                  Limited offer
+                </span>
+              </div>
+
+              {/* New price */}
+              <div className="flex items-end gap-2">
+                <span className="text-xl font-semibold text-cyan-300 uppercase tracking-wide">
+                  Now
+                </span>
+
+                <span className="text-5xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]">
+                  2499 EGP
+                </span>
+              </div>
+            </div>
 
             <div className="flex flex-col gap-3 mb-8 text-gray-300">
               <div className="flex items-center gap-3 text-sm">
@@ -84,13 +112,16 @@ export default function PricingPlans() {
           <div className="flex items-center  mb-3 gap-3">
             <h3 className="text-2xl font-semibold ">Advanced portfolio</h3>
             <Tooltip>
-              <TooltipTrigger><CircleQuestionMark/></TooltipTrigger>
+              <TooltipTrigger>
+                <CircleQuestionMark />
+              </TooltipTrigger>
               <TooltipContent>
                 <p>
                   multible pages containing all you need to shine among dentists
                 </p>
                 <p>
-                  information data base , image data base , social media links , contact form email , user authentication , and many more
+                  information data base , image data base , social media links ,
+                  contact form email , user authentication , and many more
                   configrations{" "}
                 </p>
               </TooltipContent>
@@ -99,10 +130,39 @@ export default function PricingPlans() {
           <p className="text-gray-400 mb-4 text-sm">
             A website that tells your story and who you really are
           </p>
-          <p className="text-5xl font-bold mb-6 tracking-tight">
-            4499 EGP
-            <span className="text-lg text-gray-300"></span>
-          </p>
+          <div className="relative mb-7">
+            {/* Discount badge */}
+
+            {/* Old price */}
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-1">
+              <div>
+                <span className="text-xs uppercase tracking-widest font-medium text-red-400/80">
+                  Was
+                </span>{" "}
+                <span className="text-xl  text-white/60 line-through">
+                  9500 EGP
+                </span>
+              </div>
+
+              <span
+                className=" bg-[radial-gradient(circle_at_top,_#fff6c3,_#f1c44f,_#8b5e14)] text-[#3b2a0a] text-[11px] px-5 py-1.5 rounded-full font-semibold uppercase tracking-[0.2em]
+                border border-[#f8e39a]/60 shadow-[0_6px_30px_rgba(255,215,120,0.55),_inset_0_1px_2px_rgba(255,255,255,0.6)] transition-all duration-500 cursor-pointer hover:shadow-none backdrop-blur-xl"
+              >
+                Limited offer
+              </span>
+            </div>
+
+            {/* New price */}
+            <div className="flex items-end gap-2">
+              <span className="text-xl font-semibold text-cyan-300 uppercase tracking-wide">
+                Now
+              </span>
+
+              <span className="text-5xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]">
+                4999 EGP
+              </span>
+            </div>
+          </div>
 
           <div className="flex flex-col gap-3 mb-8 text-gray-300">
             <div className="flex items-center gap-3 text-sm">
@@ -146,19 +206,26 @@ export default function PricingPlans() {
             <div className="flex items-center mb-3 gap-3">
               <h3 className="text-2xl font-semibold ">Custom Website</h3>
               <Tooltip>
-                <TooltipTrigger><CircleQuestionMark/></TooltipTrigger>
+                <TooltipTrigger>
+                  <CircleQuestionMark />
+                </TooltipTrigger>
                 <TooltipContent>
-                  <p>what ever your imaganation takes you , we can deliver . </p>
-                  <p>a complete Unique website , a new custom feature to your website. </p>
+                  <p>
+                    what ever your imaganation takes you , we can deliver .{" "}
+                  </p>
+                  <p>
+                    a complete Unique website , a new custom feature to your
+                    website.{" "}
+                  </p>
                 </TooltipContent>
               </Tooltip>
             </div>
             <p className="text-gray-400 mb-4 text-sm">
               If you can think it , we can bulid it
             </p>
-            <p className="text-5xl font-bold mb-6 tracking-tight">
+            <p className="text-5xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(0,255,255,0.6)] mb-6">
               Hourly based
-              <span className="text-lg text-gray-300"></span>
+              
             </p>
 
             <div className="flex flex-col gap-3 mb-8 text-gray-300">

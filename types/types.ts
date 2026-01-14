@@ -14,6 +14,13 @@ export interface Blogstype {
   __v?: number;          // mongoose version key (optional)
 }
 
+export type BlogsApi={
+message:string,
+data:Blogstype[],
+count:number,
+limit:number
+}
+
 
 
 
@@ -21,4 +28,5 @@ export interface Tagtype {
   value: string,
   label: string
 }
+
 

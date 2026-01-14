@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { name, email, message } = formData;
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: `Portfolio Contact ${email} <onboarding@resend.dev>`,
       to: 'yaser1999yaser@hotmail.com',
       subject: name,
       html: message ?? '',

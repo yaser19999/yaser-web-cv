@@ -33,15 +33,19 @@ export default function PostControls({
 
     await Promise.all(
       urls.map(async (src) => {
-       await fetch("/api/upload", {
+        await fetch("/api/upload", {
           method: "DELETE",
-          body: JSON.stringify({ url: src, titleImge: post.titleImge }),
+          body: JSON.stringify({ url: src }),
           headers: { "Content-Type": "application/json" },
         });
       })
     );
 
-
+    await fetch("/api/upload", {
+      method: "DELETE",
+      body: JSON.stringify({ titleImge: post.titleImge }),
+      headers: { "Content-Type": "application/json" },
+    });
 
     const res = await fetch(`/api/post`, {
       method: "DELETE",
@@ -53,10 +57,9 @@ export default function PostControls({
 
     setLoading(false);
   };
-console.log(post.titleImge)
+  console.log(post.titleImge);
   return (
     <div className="   self-center-safe  left-1/2 flex gap-2 ">
-      
       <Confirmbox
         onConfirm={handleDeleteOneBy_id}
         onCancel={() => setConfirmVisual(false)}

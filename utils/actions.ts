@@ -47,29 +47,17 @@ async function login(formData: FormData) {
     const password = formData.get("password") as string;
 
     try {
-         await signIn("credentials", {
+        await signIn("credentials", {
             email,
             password,
             redirect: false,
             callbackUrl: "/",
         });
-    } catch (error:any) {
+    } catch (error) {
         console.log(error)
         redirect("/login?message=Something went wrong with your login&type=error")
-
-
     }
-
-
-
-
-
     redirect("/")
-
-
-
-
-
 }
 
 
@@ -98,10 +86,25 @@ const handleSubmit = async (data: FormData) => {
 
 };
 
+const handleSubmitReset = async (data: FormData) => {
+    const email = data.get('email') as string
+
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/email/sendforget`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" },
+    })
+
+    if(res.ok){
+        redirect("/login?message=Email sent successfully , check your email&type=success")
+    }else redirect("/forgetPassword/email?message=Something went wrong!&type=error")
+};
 
 
 
 
-export { register, login, logout, handleSubmit }
+
+export { register, login, logout, handleSubmit, handleSubmitReset }
 
 

@@ -1,7 +1,7 @@
 import { auth } from "@/auth"
 import connectdb from "@/lib/connectdb"
 import { Blog } from "@/models/blogs"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
 export async function POST(req: Request) {
   const user = await auth();
@@ -13,7 +13,7 @@ export async function POST(req: Request) {
 
   try {
     await connectdb();
-    const { title, content, tags, userId, titleImge , userEmail } = await req.json()
+    const { title, content, tags, userId, titleImge, userEmail } = await req.json()
     if (!user.user?.id === userId) return NextResponse.json({ message: "current user not the owner of the post", status: 403 })
     await Blog.create({
       titleImge: titleImge,
@@ -35,14 +35,33 @@ export async function POST(req: Request) {
 }
 
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // const url = req.nextUrl.searchParams.get("tag")
+  const { searchParams } = new URL(req.url)
+  const tag = searchParams.get("tag");
+  const page = Number(searchParams.get("page")) || 1;
+  const limit = 12;
 
   try {
     await connectdb()
 
-    const data = await Blog.find()
+    if (tag && tag !=="All") {
+      const data = await Blog.find({
+        "tags.value": tag
+      }).limit(limit).skip((page - 1) * limit)
 
-    return NextResponse.json({ message: "done", data }, { status: 200 })
+      const count = await Blog.find({
+        "tags.value": tag
+      }).countDocuments()
+
+      return NextResponse.json({ message: "done", data , count , limit}, { status: 200 })
+
+    } else {
+      const data = await Blog.find().limit(limit).skip((page - 1) * limit)
+      const count = await Blog.countDocuments()
+      return NextResponse.json({ message: "done", data , count , limit}, { status: 200 })
+
+    }
 
   } catch (error) {
     console.log(error)

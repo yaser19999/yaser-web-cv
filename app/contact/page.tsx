@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import PromiseButton from "@/components/PromiseButton";
 import { handleSubmit } from "@/utils/actions";
 
 export default function ContactPage() {
@@ -204,13 +205,8 @@ export default function ContactPage() {
                   name="text"
                 ></textarea>
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold p-3 rounded-xl shadow-lg"
-              >
-                Send Message
-              </button>
+              <PromiseButton msg={"Send Message"}/>
+            
             </form>
           </section>
         </div>

@@ -345,7 +345,7 @@ export function SimpleEditorEdit({
           type: blob.type || "image/jpeg",
         });
 
-        const compressedFile = await compressImage(file);
+        const compressedFile = await compressImage({file:file, type:"mainPic"});
 
         const formData = new FormData();
         formData.append("imge", compressedFile);
@@ -390,7 +390,7 @@ export function SimpleEditorEdit({
           const file = new File([blob], "photo.jpg", {
             type: blob.type || "image/jpeg",
           });
-          const compressedFile = await compressImage(file);
+          const compressedFile = await compressImage({file:file, type:"thumbnail"});
           const formData = new FormData();
           formData.append("imge", compressedFile);
           const res = await fetch("/api/upload", {

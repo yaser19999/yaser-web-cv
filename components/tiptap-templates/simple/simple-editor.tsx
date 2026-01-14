@@ -213,7 +213,7 @@ export function SimpleEditor({ user }: { user: Session }) {
   const [allTags, setAlltags] = React.useState([]);
   const [tagsTodb, setTagsTodb] = React.useState<object[]>([]);
   const [titleImge, setTitleImge] = React.useState<string>("");
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = React.useState(false);
 
   const getTileImge = (url: string) => {
     setTitleImge(url);
@@ -301,7 +301,10 @@ export function SimpleEditor({ user }: { user: Session }) {
         const file = new File([blob], "photo.jpg", {
           type: blob.type || "image/jpeg",
         });
-        const compressedFile = await compressImage(file);
+        const compressedFile = await compressImage({
+          file: file,
+          type: "mainPic",
+        });
         const formData = new FormData();
         formData.append("imge", compressedFile);
 
@@ -337,7 +340,10 @@ export function SimpleEditor({ user }: { user: Session }) {
       const file = new File([blob], "photo.jpg", {
         type: blob.type || "image/jpeg",
       });
-      const compressedFile = await compressImage(file);
+      const compressedFile = await compressImage({
+        file: file,
+        type: "thumbnail",
+      });
       const formData = new FormData();
       formData.append("imge", compressedFile);
 
@@ -375,10 +381,14 @@ export function SimpleEditor({ user }: { user: Session }) {
     tags();
   }, []);
 
+
   return (
     <div className="simple-editor-wrapper">
       <Toaster />
-      <Loading show={show} text="Compressing images and processing text please wait" />
+      <Loading
+        show={show}
+        text="Compressing images and processing text please wait"
+      />
       <EditorContext.Provider value={{ editor }}>
         <Toolbar
           ref={toolbarRef}

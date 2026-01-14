@@ -1,18 +1,14 @@
-import { cookies, headers } from "next/headers";
+import { cookies } from "next/headers";
 import { auth } from "@/auth";
 import { SimpleEditorEdit } from "@/components/tiptap-templates/simple/simple-editor-edit";
 import Mobilemenu from "@/components/Mobilemenu";
 
 const getData = async (id: string) => {
-  const header = await headers();
-
-  const host = header.get("host");
-  const protocol = header.get("x-forwarded-proto");
 
   const cookieStore = await cookies();
   const cookieHeader = cookieStore.toString();
 
-  const res = await fetch(`${protocol}://${host}/api/post?id=${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/post?id=${id}`, {
     method: "GET",
     headers: { "Content-type": "application/json", cookie: cookieHeader },
   });
