@@ -1,4 +1,3 @@
-import { auth } from "@/auth"
 import connectdb from "@/lib/connectdb"
 import { tag } from "@/models/tag";
 import { NextResponse } from "next/server"

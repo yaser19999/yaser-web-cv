@@ -34,3 +34,4 @@ export default function Notify({ message, type , orignalUrl }: NotifyProps) {
 
   return null
 }
+

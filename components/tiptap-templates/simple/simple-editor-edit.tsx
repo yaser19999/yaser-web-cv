@@ -222,10 +222,12 @@ export function SimpleEditorEdit({
   user,
   cont,
   children,
+  tags,
 }: {
   user: Session | null;
   cont: Blogstype;
   children?: React.ReactNode;
+  tags: object[];
 }) {
   const isMobile = useIsMobile();
   const { height } = useWindowSize();
@@ -233,7 +235,6 @@ export function SimpleEditorEdit({
     "main" | "highlighter" | "link"
   >("main");
   const [title, setTitle] = React.useState(cont.title ?? "");
-  const [allTags, setAlltags] = React.useState(cont.tags || []);
   const [tagsTodb, setTagsTodb] = React.useState<object[]>([]);
   const [titleImge, setTitleImge] = React.useState<string>("");
   const [show, setShow] = React.useState(false);
@@ -307,7 +308,6 @@ export function SimpleEditorEdit({
     editor?.setEditable(showEdit);
     setTagsTodb(cont.tags);
     setTitle(cont.title);
-    setAlltags(cont.tags);
     setTitleImge(cont.titleImge);
   };
 
@@ -528,7 +528,7 @@ export function SimpleEditorEdit({
                 isMulti
                 placeholder="Tags"
                 name="colors"
-                options={allTags}
+                options={tags}
                 className="basic-multi-select min-w-35"
                 classNamePrefix="select"
                 styles={{
