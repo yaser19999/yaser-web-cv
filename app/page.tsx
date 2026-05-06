@@ -10,40 +10,42 @@ export default async function Home() {
     <div className=" bg-[#001b2e] flex flex-col">
       <NavBar />
       <div className="h-screen ">
-        <div className="p-7 flex flex-col h-screen gap-20 justify-center items-center">
+        <div className="p-7 flex flex-col  gap-2 justify-center items-center">
           <h1
-            className={`${kufi.className}  text-3xl  pt-10 md:text-5xl xl:text-[70px]  text-[#537692] text-center `}
+            className={`${kufi.className}  text-4xl mb-5 mt-10 md:mb-10 md:mt-5  pt-10 md:text-6xl xl:text-[70px]  text-[#537692] text-center `}
           >
           ياسر أشرف النجار
           </h1>
-          <div className=" flex flex-col items-center justify-center md:flex-row-reverse gap-10 xl:gap-50 w-full ">
+          <div className=" flex flex-col mb-5 items-center justify-center md:flex-row-reverse gap-2 xl:gap-25 w-full ">
             <div className="flex  justify-center">
-              <div className=" relative select-none   bg-[#eef3f9]   rounded-full w-90 h-90 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]  overflow-hidden shadow-[0_0_1000px_5px_rgba(56,189,248,0.5),0_0_100px_5px_rgba(56,189,248,0.5)]">
+              <div className=" relative select-none mb-5   bg-[#eef3f9]   rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] overflow-hidden shadow-[0_0_1000px_5px_rgba(56,189,248,0.5),0_0_100px_5px_rgba(56,189,248,0.5)]">
                 <Image
                   src="/done.png"
                   alt=""
                   loading="eager"
-                  width={700}
-                  height={700}
+                  width={500}
+                  height={500}
                 />
                 <div className="absolute inset-0"></div>
               </div>
             </div>
-            <div className=" text-center mt-5 text-[#eef3f9]">
+            <div className=" text-center text-[#eef3f9]">
               <h1 className="text-3xl font-bold mb-3 md:text-5xl">
-                Hi , My name is Yaser
+                Hi , My name is <span className=" text-blue-400">Yaser</span>
               </h1>
               <p className="md:text-xl">
                 i am a graduated dentist , 2022 patch
               </p>
-              <p className="md:text-xl">studied in HUE University</p>
+              <p className="md:text-xl">studied in <span className=" text-yellow-500">HUE</span> University</p>
             </div>
           </div>
+        <Buttons />
+
         </div>
       </div>
 
       {/* small boxes */}
-      <div className="mt-10 mb-10 ">
+      {/* <div className="mt-10 mb-10 ">
         <div className=" grid grid-cols-2 place-items-center   px-10 gap-10 md:gap-20 lg:gap-25 lg:flex items-center  md:justify-center">
           <Smallbox
             title="Hard working"
@@ -66,9 +68,9 @@ export default async function Home() {
             Icon={NotebookPen}
           />
         </div>
-      </div>
+      </div> */}
+
       <div className="px-10">
-        <Buttons />
       </div>
     </div>
   );
