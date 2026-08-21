@@ -37,7 +37,7 @@ export default async function Home() {
               <p className="md:text-xl">
                 i am a graduated dentist , 2022 patch
               </p>
-              <p className="md:text-xl">studied in <Link  href={"https://www.facebook.com/hue.eg/"} className=" font-bold text-yellow-500">HUE</Link> University</p>
+              <p className="md:text-xl">studied in <Link target="_blank"  href={"https://www.facebook.com/hue.eg/"} className=" font-bold text-yellow-500">HUE</Link> University</p>
             </div>
           </div>
         <Buttons />

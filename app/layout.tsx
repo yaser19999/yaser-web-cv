@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yaser Web CV",
+  title: "Elnagar",
   description: "Dr/ Yaser ashraf elnagar",
 };
 
