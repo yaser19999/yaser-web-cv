@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function page() {
   return (
@@ -75,6 +76,16 @@ export default function page() {
               Experience
             </h2>
             <div className="space-y-4">
+              <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
+                <h3 className="font-semibold text-lg">Dental motion graphics</h3>
+                <p className="text-white/60 text-sm mb-2">2026 - Present</p>
+                <ul className="text-sm text-white/80 space-y-1 list-disc list-inside">
+                  <li className="">
+                    Owner of <Link href={"https://www.instagram.com/elnagar.med/"} target="_blank" className="  text-yellow-300 font-bold">Elnagar</Link>
+                    {" "}
+                  </li>
+                </ul>
+              </div>
               <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
                 <h3 className="font-semibold text-lg">Current Position</h3>
                 <p className="text-white/60 text-sm mb-2">2025 - Present</p>
@@ -187,6 +198,8 @@ export default function page() {
                 "TypeScript",
                 "Photoshop",
                 "Illustrator",
+                "AfterEffect",
+                "AdobePremiere",
                 "Sony Vegas",
                 "Canva pro",
                 "Endodontics",
